@@ -1,10 +1,46 @@
-body {
-    color: white;
-    background-color: black;
-    text-align: center;
+@import url('normalize.css');
+
+@font-face {
+    font-family: mononoki;
+    src: url('mononoki-Regular.ttf');
 }
 
-a, a:visited {
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: black;
+}
+
+body {
+    position: relative;
+    isolation: isolate;
+    margin: 0;
+    color: white;
+    font-family: mononoki;
+    text-align: center;
+    background: transparent;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: url("background.jpg") center / cover no-repeat;
+    filter: blur(5px);
+    transform: scale(1.03);
+}
+
+hr {
+    width: 30%;
+    color: white;
+}
+
+a,
+a:visited {
     color: white;
     text-decoration: underline;
 }
